@@ -18,6 +18,12 @@ npm run preview
 
 Run `npm run lint` for the ESLint checks.
 
+## GitHub Pages
+
+The site is deployed by the `Deploy to GitHub Pages` workflow. In the repository's
+**Settings → Pages → Build and deployment**, set **Source** to **GitHub Actions**
+so Pages serves the built `dist` artifact instead of the unbuilt source files.
+
 ## Structure
 
 - `src/App.tsx` defines the routes and shared application shell.
