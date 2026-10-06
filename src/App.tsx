@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import { MotionConfig } from 'framer-motion'
 import { BackToTop, SiteFrame } from './components'
 import './App.css'
@@ -20,7 +20,7 @@ const LegalPage = lazy(() => import('./pages').then(page => ({ default: page.Leg
 const NotFoundPage = lazy(() => import('./pages').then(page => ({ default: page.NotFoundPage })))
 
 function App() {
-  return <BrowserRouter><MotionConfig reducedMotion="user"><SiteFrame><Suspense fallback={<div className="page-loading" role="status">CORAL&nbsp; / &nbsp;INTERIORS</div>}><Routes>
+  return <HashRouter><MotionConfig reducedMotion="user"><SiteFrame><Suspense fallback={<div className="page-loading" role="status">CORAL&nbsp; / &nbsp;INTERIORS</div>}><Routes>
     <Route path="/" element={<HomePage />} />
     <Route path="/about" element={<AboutPage />} />
     <Route path="/services" element={<ServicesPage />} />
@@ -36,7 +36,7 @@ function App() {
     <Route path="/privacy" element={<LegalPage type="privacy" />} />
     <Route path="/terms" element={<LegalPage type="terms" />} />
     <Route path="*" element={<NotFoundPage />} />
-  </Routes></Suspense></SiteFrame><BackToTop /></MotionConfig></BrowserRouter>
+  </Routes></Suspense></SiteFrame><BackToTop /></MotionConfig></HashRouter>
 }
 
 export default App
